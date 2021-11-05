@@ -1,4 +1,7 @@
 #include "matriz.h"
+#include<iostream>
+#include<iomanip>
+using std::setw;
 
 void Matriz::reservaMemoria()
 {
@@ -106,6 +109,65 @@ Matriz &Matriz::operator*(Matriz &M)
     return *resultado;
 }
 
+void Matriz::escalar(int esc)
+{
+    for (int i=0; i<filas_; i++){
+        for(int j=0; j<columnas_; j++){
+            elementos_[i][j]*=esc;
+
+    }
+    }
+
+}
+
+void Matriz::GaussJ()
+{
+   for(int i=0; i<this->filas_; i++){
+       float pivote;
+       pivote= elementos_[i][i];
+       float aux;
+       if(elementos_[i][i] == 0.0)
+                 {
+                      cout<<"Mathematical Error!";
+                      exit(0);
+       }
+       for(int k=0; k<this->columnas_; k++){
+           elementos_[i][k]=elementos_[i][k]/pivote;
+
+       }
+
+       for(int j=0; j<this->filas_; j++){
+           if(i!=j){
+               aux=elementos_[j][i];
+               for(int m=0; m<this->filas_; m++){
+                   elementos_[j][m]=elementos_[j][m]-aux*elementos_[i][m];
+
+               }
+
+           }
+
+       }
+
+       cout<<"-----------------------------------------------";
+        cout<<"\n";
+       for(int i=0; i<this->filas_; i++){
+
+           for(int j=0; j<this->columnas_; j++){
+
+               cout<<elementos_[i][j]<<"\t";
+              }
+
+           cout<<endl;
+       }
+
+
+}
+
+}
+
+
+
+
 int Matriz::filas()
 {
     return filas_;
@@ -115,5 +177,3 @@ int Matriz::columnas()
 {
     return columnas_;
 }
-
-
