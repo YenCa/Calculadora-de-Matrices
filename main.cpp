@@ -49,7 +49,7 @@ int main()
          cout<<"\n1.- Multiplicacion por un escalar "<<endl;
          cout<<"\n2.- Suma de matrices "<< endl;
          cout<<"\n3.- Producto de dos matrices "<<endl;
-         cout<<"\n4.- Volver atras "<<endl;
+         cout<<"\n4.- Salir "<<endl;
          cout<<"\n OPCION:  ";
          cin>>opc1;
       switch(opc1){
@@ -150,7 +150,7 @@ int main()
              cout<<"******** El orden de las matrices debe ser n x n para sumar ********"<<endl;
              }
             cout<<"*************************************************************"<<endl;
-            cout<<"\nDesea realizar otra suma o volver al menu"<<endl;
+            cout<<"\nDesea realizar otra suma o salir"<<endl;
 
             cout<<"\n 1.  Realizar otra suma "<<"\n 0.  Salir  "<<endl;
             cout<<"OPCION";
@@ -220,9 +220,9 @@ int main()
                         cout<<"******** El orden de las matrices debe ser n x n para multiplicar ********"<<endl;
                        }
 
-                     cout<<"\nDesea realizar otra multiplicacion o volver al menu \n"<<endl;
+                     cout<<"\nDesea realizar otra multiplicacion o Salir \n"<<endl;
 
-                     cout<<"\n 1.  Realizar otra multiplicacion "<<"\n 0.  Volver al menu  "<<endl;
+                     cout<<"\n 1.  Realizar otra multiplicacion "<<"\n 0.  Salir  "<<endl;
                      cout<<"OPCION";
                      cin>>m;
                      if(m==0){
@@ -233,25 +233,72 @@ int main()
                      while(m==1);
                      break;
 
-               case 4:
-                   cout<<"********************************************************************"<<endl;
-                     break;
-                 default:
-                      break;
-                         }
+
+      case 4:
+             default:
+                  break;
+
+                 }
                         }
 
             while(opc1!=4);
+            cout<<"\t";
+            cout<<"USTED HA DECIDIDO SALIR"<<endl;
+            cout<<"\t";
+            cout<<"ADIOS"<<endl;
+            return 0;
 
- case 2:
-     break;
 
- }
+ case 2: cout<<"********************************************************************"<<endl;
+        cout<<"========       USTED ELIGIO:   GAUSS JORDAN    ========"<<endl;
+
+     do{
+
+
+            cout<<"\nIngrese los valores para filas y columnas respectivamente para la matriz A \n"<<endl;
+            cin>>FILAS;
+            cin>>COLUMNAS;
+
+         Matriz M1(FILAS, COLUMNAS);
+         for(int i=0; i<FILAS; i++){
+              for (int j=0; j<COLUMNAS; j++){
+                cout<<" Ingrese los valores: "<<endl;
+                cin>>contador;
+                M1.llenarElemento(i, j, contador++);
+             }
+         }
+         M1.ver();
+         cout<<"*****************************************************"<<endl;
+
+         M1.GaussJ();
+
+         cout<<"*****************************************************"<<endl;
+         M1.ver();
+         cout<<"*****************************************************"<<endl;
+
+         cout<<"\nDesea encontrar otra solucion por Gauss Jordan o salir \n"<<endl;
+         cout<<"\n 1.  Realizar otra solucion por Gauss- Jordan "<<"\n 0.  Salir  "<<endl;
+         cout<<"OPCION  ";
+         cin>>m;
+          if(m==0){
+             return 0;
+                     }
+                  }
+                while(m==1);
+                break;
 
 
 
- }
+         break;
+
+            }
+
+
+
+            }
+
  while(opcion !=3);
+
 
 
 
