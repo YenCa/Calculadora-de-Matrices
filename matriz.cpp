@@ -123,9 +123,9 @@ void Matriz::escalar(int esc)
 void Matriz::GaussJ()
 {
    for(int i=0; i<this->filas_; i++){
-       float pivote;
+       double pivote;
        pivote= elementos_[i][i];
-       float aux;
+       double aux;
        if(elementos_[i][i] == 0.0)
                  {
                       cout<<"Mathematical Error!";
