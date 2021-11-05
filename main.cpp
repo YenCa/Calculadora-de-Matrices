@@ -29,7 +29,7 @@ int main()
      cout<<"\t\t '20172000635  YENCY CAROLINA MATUTE AMAYA' \n";
      cout<<"\t\t '             WENDY VANESSA              ' \n";
      cout<<"\n\t\t  ...CALCULADORA DE MATRICES... \n\n\t\t ";
-      Sleep(200);
+      Sleep(10);
 
 
  do{
