@@ -2,11 +2,12 @@
 #define MATRIZ_H
 
 #include<iostream>
+#include<cmath>
 
 using std::cout;
 using std::endl;
 using std::cin;
-
+using std::abs;
 class Matriz
 {
 
@@ -45,6 +46,9 @@ public:
     Matriz &operator+(Matriz &M);
     Matriz &operator=(Matriz &M);
     Matriz &operator*(Matriz &M);
+    void escalar(int esc);
+    void GaussJ();
+
 
 };
 
