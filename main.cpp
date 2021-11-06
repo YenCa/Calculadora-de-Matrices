@@ -23,13 +23,13 @@ int m;
 
 int main()
 {
-     system("color fd");
+     system("color fd"); // Color para la ventana
 
      cout<<"\t\t '           PROGRAMACION II              ' \n";
      cout<<"\t\t '20172000635  YENCY CAROLINA MATUTE AMAYA' \n";
      cout<<"\t\t '             WENDY VANESSA              ' \n";
      cout<<"\n\t\t  ...CALCULADORA DE MATRICES... \n\n\t\t ";
-      Sleep(10);
+
 
 
  do{
@@ -40,10 +40,11 @@ int main()
  cout<<"\n OPCION:  ";
  cin>>opcion;
 
- switch(opcion){
+ switch(opcion){ //Swith para crear el menu de lo que el usuario desee calcular
       case 1:
 
      do{
+
          cout<<"********************************************************************"<<endl;
          cout<<"========   USTED ELIGIO:   OPERACIONES CON MATRICES   ========"<<endl;
          cout<<"\n1.- Multiplicacion por un escalar "<<endl;
@@ -54,31 +55,39 @@ int main()
          cin>>opc1;
       switch(opc1){
             case 1 :
+
           cout<<"********************************************************************"<<endl;
           cout<<"========     USTED ELIGIO:   Multiplicacion por un escalar    ========"<<endl;
-          cout<<"\nIngrese los valores para filas y columnas respectivamente para la matriz \n"<<endl;
-         cin>>FILAS;
-         cin>>COLUMNAS;
+           do{
+          cout<<"\n Ingrese los valores para filas:  ";
+          cin>>FILAS;
+          cout<<"";
+          cout<<"\n Ingrese los valores para columnas:  ";
+          cin>>COLUMNAS;
+          cout<<""<<endl;
 
-          do{
-              Matriz M4(FILAS, COLUMNAS);
+
+              Matriz M4(FILAS, COLUMNAS); //Hacemos uso de un ciclo for para cada valor que el usuario digite
+              // Hacemos uso de un contador que nos llenara la matriz con los valores ingresado
+              cout<<"\n Ingrese los valores: "<<endl;
                      for(int i=0; i<FILAS; i++){
                          for (int j=0; j<COLUMNAS; j++){
-                          cout<<"Ingrese los valores: "<<endl;
+
                            cin>>contador;
                            M4.llenarElemento(i, j, contador++);
                         }
                      }
 
-                    cout<<"\n         Ingrese el valor del escalar:   ";
+                    cout<<"\n         Ingrese el valor del escalar: ";
                     cin>>n;
+                    cout<<"--------------------------------------------------------------"<<endl;
                     M4.ver();
 
                     cout<<"**************************************************************"<<endl;
                     M4.escalar(n);
                     M4.ver();
                     cout<<"**************************************************************"<<endl;
-                    cout<<"     Desea multiplicar otra matriz con un escalar   "<<endl;
+                    cout<<"     Desea multiplicar otra matriz con un escalar? \n "<<endl;
                     cout<<"\n 1.  Realizar otro producto "<<"\n 0.  Salir  "<<endl;
                     cout<<"  OPCION ";
                     cin>>m;
@@ -87,26 +96,28 @@ int main()
                   }
           }
           while(m==1);
+          break;
 
-             break;
 
               case 2:
            cout<<"********************************************************************"<<endl;
            cout<<"========         USTED ELIGIO:   Suma de dos matrices           ========"<<endl;
 
                     do{
-              cout<<"\nIngrese los valores para filas y columnas respectivamente para la matriz A \n"<<endl;
-
-              cin>>FILAS;
-              cin>>COLUMNAS;
+               cout<<"\n Ingrese los valores para filas:  ";
+               cin>>FILAS;
+               cout<<"";
+               cout<<"\n Ingrese los valores para columnas:  ";
+               cin>>COLUMNAS;
+               cout<<""<<endl;
 
 
               Matriz M1(FILAS,COLUMNAS);
 
-
+                cout<<"Ingrese los valores: "<<endl;
                 for(int i=0; i<FILAS; i++){
                     for (int j=0; j<COLUMNAS; j++){
-                        cout<<"Ingrese los valores: "<<endl;
+
                         cin>>contador;
                        M1.llenarElemento(i, j, contador++);
                     }
@@ -114,15 +125,18 @@ int main()
 
 
 
-              cout<<"\nIngrese los valores para filas y columnas respectivamente para la matriz B \n"<<endl;
-
-              cin>>FILAS;
-              cin>>COLUMNAS;
+                cout<<"\n Ingrese los valores para filas:  ";
+                cin>>FILAS;
+                cout<<"";
+                cout<<"\n Ingrese los valores para columnas:  ";
+                cin>>COLUMNAS;
+                cout<<""<<endl;
 
              Matriz M2(FILAS, COLUMNAS);
+             cout<<"\n Ingrese los valores: "<<endl;
                 for(int i=0; i<FILAS; i++){
                      for (int j=0; j<COLUMNAS; j++){
-                       cout<<" Ingrese los valores: "<<endl;
+
                        cin>>contador;
                        M2.llenarElemento(i, j, contador++);
                     }
@@ -150,7 +164,7 @@ int main()
              cout<<"******** El orden de las matrices debe ser n x n para sumar ********"<<endl;
              }
             cout<<"*************************************************************"<<endl;
-            cout<<"\nDesea realizar otra suma o salir"<<endl;
+            cout<<"\nDesea realizar otra suma o salir? \n"<<endl;
 
             cout<<"\n 1.  Realizar otra suma "<<"\n 0.  Salir  "<<endl;
             cout<<"OPCION";
@@ -173,28 +187,35 @@ int main()
 
           do{
 
-              cout<<"\nIngrese los valores para filas y columnas respectivamente para la matriz A \n"<<endl;
+              cout<<"\n Ingrese los valores para filas:  ";
               cin>>FILAS;
+              cout<<"";
+              cout<<"\n Ingrese los valores para columnas:  ";
               cin>>COLUMNAS;
+              cout<<""<<endl;
               Matriz M1(FILAS,COLUMNAS);
 
-
+                cout<<"\n Ingrese los valores: "<<endl;
                 for(int i=0; i<FILAS; i++){
                       for (int j=0; j<COLUMNAS; j++){
-                       cout<<" Ingrese los valores: "<<endl;
+
                                cin>>contador;
                            M1.llenarElemento(i, j, contador++);
                               }
                           }
 
-              cout<<"\nIngrese los valores para filas y columnas respectivamente para la matriz B \n"<<endl;
-              cin>>FILAS;
-              cin>>COLUMNAS;
+                cout<<"\n Ingrese los valores para filas:  ";
+                cin>>FILAS;
+                cout<<"";
+                cout<<"\n Ingrese los valores para columnas:  ";
+                cin>>COLUMNAS;
+                cout<<""<<endl;
 
               Matriz M2(FILAS, COLUMNAS);
+              cout<<"\n Ingrese los valores: "<<endl;
                    for(int i=0; i<FILAS; i++){
                          for (int j=0; j<COLUMNAS; j++){
-                            cout<<"Ingrese los valores: "<<endl;
+
                             cin>>contador;
                             M2.llenarElemento(i, j, contador++);
                               }
@@ -220,7 +241,7 @@ int main()
                         cout<<"******** El orden de las matrices debe ser n x n para multiplicar ********"<<endl;
                        }
 
-                     cout<<"\nDesea realizar otra multiplicacion o Salir \n"<<endl;
+                     cout<<"\nDesea realizar otra multiplicacion o Salir? \n"<<endl;
 
                      cout<<"\n 1.  Realizar otra multiplicacion "<<"\n 0.  Salir  "<<endl;
                      cout<<"OPCION";
@@ -252,17 +273,24 @@ int main()
  case 2: cout<<"********************************************************************"<<endl;
         cout<<"========       USTED ELIGIO:   GAUSS JORDAN    ========"<<endl;
 
-     do{
+    do{
 
-
-            cout<<"\nIngrese los valores para filas y columnas respectivamente para la matriz A \n"<<endl;
+            cout<<"\n Ingrese los valores para filas:  ";
             cin>>FILAS;
+            cout<<"";
+            cout<<"\n Ingrese los valores para columnas:  ";
             cin>>COLUMNAS;
+            cout<<""<<endl;
+            if(FILAS>1 & COLUMNAS>1){
+
+
+
 
          Matriz M1(FILAS, COLUMNAS);
+         cout<<" Ingrese los valores: "<<endl;
          for(int i=0; i<FILAS; i++){
               for (int j=0; j<COLUMNAS; j++){
-                cout<<" Ingrese los valores: "<<endl;
+
                 cin>>contador;
                 M1.llenarElemento(i, j, contador++);
              }
@@ -276,33 +304,40 @@ int main()
          M1.ver();
          cout<<"*****************************************************"<<endl;
 
-         cout<<"\nDesea encontrar otra solucion por Gauss Jordan o salir \n"<<endl;
+
+
+         cout<<"\nDesea encontrar otra solucion por Gauss Jordan o salir? \n"<<endl;
          cout<<"\n 1.  Realizar otra solucion por Gauss- Jordan "<<"\n 0.  Salir  "<<endl;
          cout<<"OPCION  ";
          cin>>m;
-          if(m==0){
-             return 0;
+                   if(m==0){
+                      return 0;
+                              }
+            }
+            else{  cout<<" \n No es posible \n"<<endl;
+     }
+                           }
+
+
+                         while(m==1);
+                         break;
+
+
+
+                  break;
+
                      }
-                  }
-                while(m==1);
-                break;
 
 
 
-         break;
+                     }
 
-            }
-
-
-
-            }
-
- while(opcion !=3);
+          while(opcion !=3);
 
 
 
 
-    return 0;
+             return 0;
 
 
-}
+         }
