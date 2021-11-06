@@ -13,9 +13,11 @@ class Matriz
 
 
 private:
+    // Para crear una matriz necesitamos las dimensiones: filas y columnas.
     int filas_;
-    int columnas_;
+    int columnas_; //El orden son las filas y las columnas
 
+    //Arreglo de los elementos, matriz general de arreglo bidimensional
     double ** elementos_;
     void reservaMemoria();
 
@@ -23,15 +25,15 @@ public:
 
     // Constructores
     Matriz();
-    Matriz(int filas, int columnas);
+    Matriz(int filas, int columnas); // Constructor que le asignamos filas y columnas
 
     // Destructores
 
     ~Matriz();
 
     // Funciones set - establecer
-    void establecerFilas(int filas);
-    void establecerColumnas(int columnas);
+    void establecerFilas(int filas); //Le mandariamos las filas
+    void establecerColumnas(int columnas); // Le mandariamos las columnas
 
 
     //Funciones get -
@@ -42,10 +44,13 @@ public:
     // Otras funciones
 
     void llenarElemento(int fila, int columna, double valor);
-    void ver();
+    void ver(); // Visualiza la matriz
+    //Sobrecarga de operadores
     Matriz &operator+(Matriz &M);
-    Matriz &operator=(Matriz &M);
+    Matriz &operator=(Matriz &M); // Para imprimir la nueva matriz
     Matriz &operator*(Matriz &M);
+
+    //Otras funciones
     void escalar(int esc);
     void GaussJ();
 
