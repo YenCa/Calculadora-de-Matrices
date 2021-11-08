@@ -8,9 +8,8 @@ using std::cout;
 using std::endl;
 using std::cin;
 using std::abs;
-class Matriz
-{
 
+class Matriz {
 
 private:
     // Para crear una matriz necesitamos las dimensiones: filas y columnas.
@@ -18,43 +17,57 @@ private:
     int columnas_; //El orden son las filas y las columnas
 
     //Arreglo de los elementos, matriz general de arreglo bidimensional
-    double ** elementos_;
+    double **elementos_;
+
     void reservaMemoria();
 
 public:
-
-    // Constructores
+    /**
+     * Constructores
+     */
     Matriz();
+
     Matriz(int filas, int columnas); // Constructor que le asignamos filas y columnas
 
-    // Destructores
-
+    /**
+     * Destructores
+     */
     ~Matriz();
 
-    // Funciones set - establecer
+    /**
+     * Funciones set - establecer
+     */
     void establecerFilas(int filas); //Le mandariamos las filas
     void establecerColumnas(int columnas); // Le mandariamos las columnas
 
-
-    //Funciones get -
-
+    /**
+     * Funciones get
+     */
     int filas();
+
     int columnas();
 
-    // Otras funciones
-
+    /**
+     * Utilidades
+     */
     void llenarElemento(int fila, int columna, double valor);
+
     void ver(); // Visualiza la matriz
-    //Sobrecarga de operadores
+
+    /**
+     * Sobrecarga de operadores
+     */
     Matriz &operator+(Matriz &M);
+
     Matriz &operator=(Matriz &M); // Para imprimir la nueva matriz
     Matriz &operator*(Matriz &M);
 
-    //Otras funciones
+    /**
+     * Operaciones
+     */
     void escalar(int esc);
+
     void GaussJ();
-
-
 };
 
 #endif // MATRIZ_H
