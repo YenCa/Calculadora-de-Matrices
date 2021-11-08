@@ -104,7 +104,7 @@ void Matriz::escalar(int esc) {
     }
 }
 
-void Matriz::GaussJ() {
+void Matriz::GaussJ() {                         //solución por el método de GaussJordan
     for (int i = 0; i < this->filas_; i++) {
         float pivote;
         pivote = elementos_[i][i];
