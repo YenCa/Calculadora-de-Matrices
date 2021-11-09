@@ -281,7 +281,7 @@ int main()
             cout<<"\n Ingrese los valores para columnas:  ";
             cin>>COLUMNAS;
             cout<<""<<endl;
-            if(FILAS>1 & COLUMNAS>1){
+            if(FILAS>2 & FILAS<5 & COLUMNAS>2 & COLUMNAS<5){
 
 
 
@@ -295,9 +295,9 @@ int main()
                 M1.llenarElemento(i, j, contador++);
              }
          }
+         cout<<"--------------------------------------------------------"<<endl;
          M1.ver();
-         cout<<"*****************************************************"<<endl;
-
+         
          M1.GaussJ();
 
          cout<<"*****************************************************"<<endl;
