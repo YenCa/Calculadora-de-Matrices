@@ -105,29 +105,34 @@ void Matriz::escalar(int esc) {
 }
 
 void Matriz::GaussJ() {                         //solución por el método de GaussJordan
-    for (int i = 0; i < this->filas_; i++) {
-        float pivote;
-        pivote = elementos_[i][i];
-        float aux;
+   
+   for(int i=0; i<this->filas_; i++){
+       double pivote;
+       pivote = elementos_[i][i];
+       double aux;
+       if(elementos_[i][i] == 0.0)
+                 {
+                      cout<<"\n\n Es una contradiccion y, por tanto, no tiene solucion.\n\n\n";
+                      exit(0);
+       }
 
-        if (elementos_[i][i] == 0.0) {
-            cout << "Mathematical Error!";
-            exit(0);
-        }
+       for(int k=0; k<this->columnas_; k++){
+           elementos_[i][k]=elementos_[i][k]/pivote;
 
-        for (int k = 0; k < this->columnas_; k++) {
-            elementos_[i][k] = elementos_[i][k] / pivote;
-        }
+       }
 
-        for (int j = 0; j < this->filas_; j++) {
-            if (i != j) {
-                aux = elementos_[j][i];
+       for(int j=0; j<this->filas_; j++){
+           if(i!=j){
+               aux=elementos_[j][i];
+               for(int m=0; m<this->columnas_; m++){
 
-                for (int m = 0; m < this->filas_; m++) {
-                    elementos_[j][m] = elementos_[j][m] - aux * elementos_[i][m];
-                }
-            }
-        }
+                   elementos_[j][m]=elementos_[j][m]-aux*elementos_[i][m];
+
+               }
+
+           }
+
+       }
 
         cout << "-----------------------------------------------";
         cout << "\n";
