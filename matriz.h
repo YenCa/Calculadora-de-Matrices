@@ -68,6 +68,8 @@ public:
     void escalar(int esc);
 
     void GaussJ();
+    
+    void Solucion();
 };
 
 #endif // MATRIZ_H
