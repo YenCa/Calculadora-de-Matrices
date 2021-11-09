@@ -147,6 +147,14 @@ void Matriz::GaussJ() {                         //solución por el método de Ga
     }
 }
 
+void Matriz::Solucion()
+{
+    for(int i=0;i<this->filas_;i++){
+          cout<<"\nx"<<i+1<<" = "<<elementos_[i][this->columnas_-1]<<endl;
+    }
+}
+
+
 int Matriz::filas() {
     return filas_;
 }
