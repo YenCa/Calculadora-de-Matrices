@@ -134,7 +134,8 @@ void Matriz::GaussJ() {                         //solución por el método de Ga
 
        }
 
-        cout << "-----------------------------------------------";
+        cout<<"----------------------------------------------------";
+        cout<<"\n";
         cout << "\n";
 
         for (int i = 0; i < this->filas_; i++) {
