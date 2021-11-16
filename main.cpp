@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <math.h>
 #include "matriz.h"
+#include "gaussj.h"
 #include<conio.h>
 #include<cstdlib>
 #include<cstdio>
@@ -111,7 +112,7 @@ int main()
                cin>>COLUMNAS;
                cout<<""<<endl;
 
-
+              cout<<"\n MATRIZ A"<<endl;
               Matriz M1(FILAS,COLUMNAS);
 
                 cout<<"Ingrese los valores: "<<endl;
@@ -123,15 +124,13 @@ int main()
                     }
                 }
 
-
-
                 cout<<"\n Ingrese los valores para filas:  ";
                 cin>>FILAS;
                 cout<<"";
                 cout<<"\n Ingrese los valores para columnas:  ";
                 cin>>COLUMNAS;
                 cout<<""<<endl;
-
+             cout<<"\n MATRIZ B"<<endl;
              Matriz M2(FILAS, COLUMNAS);
              cout<<"\n Ingrese los valores: "<<endl;
                 for(int i=0; i<FILAS; i++){
@@ -152,17 +151,11 @@ int main()
 
                 cout<<"*********************************************************"<<endl;
 
-          if((M1.columnas()==M2.columnas()) and (M1.filas())==M2.filas()){
-              Matriz M3;
-              cout<<"  La suma es: \n"<< endl;
 
+              Matriz M3;
                M3 = M1 + M2;
                M3.ver();
 
-            }
-             else{
-             cout<<"******** El orden de las matrices debe ser n x n para sumar ********"<<endl;
-             }
             cout<<"*************************************************************"<<endl;
             cout<<"\nDesea realizar otra suma o salir? \n"<<endl;
 
@@ -193,6 +186,8 @@ int main()
               cout<<"\n Ingrese los valores para columnas:  ";
               cin>>COLUMNAS;
               cout<<""<<endl;
+
+              cout<<"\n MATRIZ A"<<endl;
               Matriz M1(FILAS,COLUMNAS);
 
                 cout<<"\n Ingrese los valores: "<<endl;
@@ -211,6 +206,7 @@ int main()
                 cin>>COLUMNAS;
                 cout<<""<<endl;
 
+              cout<<"\n MATRIZ B"<<endl;
               Matriz M2(FILAS, COLUMNAS);
               cout<<"\n Ingrese los valores: "<<endl;
                    for(int i=0; i<FILAS; i++){
@@ -228,18 +224,16 @@ int main()
 
                   M2.ver();
 
-                 if((M1.columnas()==M2.columnas()) and (M1.filas()==M2.filas())){
+
                   Matriz M3;
-                  cout<<"******************************************************************************"<<endl;
-                  cout<<" La Multiplicacion: \n"<< endl;
+                  /*cout<<"******************************************************************************"<<endl;
+                  cout<<" La Multiplicacion: \n"<< endl;*/
 
                    M3 = M1 * M2;
                    M3.ver();
 
-                      }
-                  else{
-                        cout<<"******** El orden de las matrices debe ser n x n para multiplicar ********"<<endl;
-                       }
+
+
 
                      cout<<"\nDesea realizar otra multiplicacion o Salir? \n"<<endl;
 
@@ -281,34 +275,26 @@ int main()
             cout<<"\n Ingrese los valores para columnas:  ";
             cin>>COLUMNAS;
             cout<<""<<endl;
-            if(FILAS>2 & FILAS<5 & COLUMNAS>2 & COLUMNAS<5){
+        if(FILAS>1 & COLUMNAS>2){
 
-
-
-
-         Matriz M1(FILAS, COLUMNAS);
+         GaussJ J1 (FILAS, COLUMNAS);
          cout<<" Ingrese los valores: "<<endl;
          for(int i=0; i<FILAS; i++){
               for (int j=0; j<COLUMNAS; j++){
 
                 cin>>contador;
-                M1.llenarElemento(i, j, contador++);
+                J1.llenarElemento(i, j, contador++);
              }
          }
          cout<<"----------------------------------------------------"<<endl;
-         M1.ver();
-         M1.ver();
-         
-         M1.GaussJ();
+         J1.ver();
+
+         J1.Gauss();
+
          cout<<"----------------------------------------------------"<<endl;
-         M1.ver();
          cout<<"\n\n Las Soluciones son: \n\n\n";
-         M1.Solucion();
-         
+         J1.Solucion();
          cout<<"----------------------------------------------------"<<endl;
-         M1.ver();
-
-
 
          cout<<"\nDesea encontrar otra solucion por Gauss Jordan o salir? \n"<<endl;
          cout<<"\n 1.  Realizar otra solucion por Gauss- Jordan "<<"\n 0.  Salir  "<<endl;
