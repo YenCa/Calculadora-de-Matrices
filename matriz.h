@@ -37,8 +37,8 @@ public:
     /**
      * Funciones set - establecer
      */
-    void establecerFilas(int filas); //Le mandariamos las filas
-    void establecerColumnas(int columnas); // Le mandariamos las columnas
+    void establecerDimension(int filas, int columnas); //Le mandariamos las filas
+
 
     /**
      * Funciones get
@@ -68,7 +68,7 @@ public:
     void escalar(int esc);
 
     void GaussJ();
-    
+
     void Solucion();
 };
 
