@@ -112,33 +112,33 @@ Matriz &Matriz::operator=(Matriz &M)
 
 Matriz &Matriz::operator*(Matriz &M)
 {
-    Matriz *resultado;
-    resultado=new Matriz (filas_, columnas_);
-    if(resultado->columnas()==M.filas()){
+   Matriz *resultado;
+        resultado=new Matriz (filas_, columnas_);
+        if(this->columnas()==M.filas()){
 
-    for (int i=0; i<filas_; i++){
-        for(int j=0; j<columnas_; j++){
-            resultado->elementos_[i][j]=0; // Llenamos los elementos =0 para la matriz resultado
+        for (int i=0; i<this->filas_; i++){
+            for(int j=0; j<M.columnas_; j++){
+                resultado->elementos_[i][j]=0; // Llenamos los elementos =0 para la matriz resultado
 
-            for(int k=0; k<resultado->filas_; k++){
-            // Creamos un for mas para realizar la operacion *
-            //Donde los elementos de resultado = a la suma de los elementos de resultado y elementos [i][k] * los elementos de la Matriz M[k][j]
+                for(int k=0; k<this->columnas_; k++){
+                // Creamos un for mas para realizar la operacion *
+                //Donde los elementos de resultado = a la suma de los elementos de resultado y elementos [i][k] * los elementos de la Matriz M[k][j]
 
-                resultado->elementos_[i][j]=elementos_[i][k]  *M.elementos_[k][j]+resultado->elementos_[i][j];
-               // resultado->elementos_[i][j]=resultado->elementos_[i][j];
+                    resultado->elementos_[i][j]+=this->elementos_[i][k]*M.elementos_[k][j];
+                   
+                }
+                }
             }
-            }
+        cout<<"******************************************************************************"<<endl;
+        cout<<" La Multiplicacion: \n"<< endl;
+        return *resultado; //Retornara el valor de la multiplicacion
+
         }
-    cout<<"******************************************************************************"<<endl;
-    cout<<" La Multiplicacion: \n"<< endl;
-    return *resultado; //Retornara el valor de la multiplicacion
+        else{
+            cout<<"\nNo se puede realizar la multiplicacion ya que son matrices incompatibles"<<endl;
 
-    }
-    else{
-        cout<<"\nNo se puede realizar la multiplicacion ya que son matrices incompatibles"<<endl;
-
-    }
-    exit(0);
+        }
+        exit(0);
 }
 
 
